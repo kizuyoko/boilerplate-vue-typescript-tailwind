@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  h1, h2,
+  button {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    line-height: 1.75rem;
+  }
+  h1 {
+    font-size: 2.25rem; /* 36px */
+  }
+  h2 {
+    font-size: 1.5rem; /* 24px */
+  }
+  nav, footer {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+  header, footer {
+    @apply bg-slate-200 shadow text-2xl;
+  }
+  nav {
+    @apply bg-gray-200 shadow sm:shadow-none sm:bg-none hover:underline;
+  }
+  button {
+    @apply bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700;
+  }
+}
