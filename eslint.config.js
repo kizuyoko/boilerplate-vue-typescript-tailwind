@@ -68,6 +68,9 @@ export default defineConfig([
   {
     files: ['**/*.md'],
     plugins: { markdown: markdownPlugin },
+    languageOptions: {
+      parser: 'espree',
+    },
     rules: {
       ...markdownPlugin.configs.recommended.rules,
     },
