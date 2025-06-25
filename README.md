@@ -1,75 +1,35 @@
 # Nuxt Minimal Starter
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A minimal personal boilerplate to kickstart projects with **Nuxt 3**, **TypeScript**, and **Tailwind CSS**.
 
-## Setup
+## Tech Stack
 
-Make sure to install dependencies:
+- [Nuxt 3](https://nuxt.com/)
+- [Vue 3](https://vuejs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## Features
+
+Tailwind CSS ready
+TypeScript configured
+Vue 3 with <script setup> syntax
+File-based routing via Nuxt
+Simple reusable UI components (Button, Header, Footer)
+Clean layout with flex and container setup
+
+## Links
+
+Live Site: Netlify link [here](https://boilerplate-vue-typescript-tailwind.netlify.app/)
+GitHub Repository: GitHub link [here](https://github.com/kizuyoko/boilerplate-vue-typescript-tailwind)
+
+## Getting Started
 
 ```bash
-# npm
+# Install dependencies
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Start the development server
 npm run dev
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
