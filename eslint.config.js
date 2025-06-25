@@ -1,20 +1,108 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import pluginVue from "eslint-plugin-vue";
-import json from "@eslint/json";
-import markdown from "@eslint/markdown";
-import css from "@eslint/css";
-import { defineConfig } from "eslint/config";
-
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
+import pluginVue from 'eslint-plugin-vue'
+import jsonPlugin from '@eslint/json'
+import markdownPlugin from '@eslint/markdown'
+import cssPlugin from '@eslint/css'
+import { defineConfig } from 'eslint/config'
+import prettier from 'eslint-plugin-prettier'
 
 export default defineConfig([
-  { files: ["**/*.{js,mjs,cjs,ts,mts,cts,vue}"], plugins: { js }, extends: ["js/recommended"] },
-  { files: ["**/*.{js,mjs,cjs,ts,mts,cts,vue}"], languageOptions: { globals: {...globals.browser, ...globals.node} } },
-  tseslint.configs.recommended,
-  pluginVue.configs["flat/essential"],
-  { files: ["**/*.vue"], languageOptions: { parserOptions: { parser: tseslint.parser } } },
-  { files: ["**/*.json"], plugins: { json }, language: "json/json", extends: ["json/recommended"] },
-  { files: ["**/*.md"], plugins: { markdown }, language: "markdown/gfm", extends: ["markdown/recommended"] },
-  { files: ["**/*.css"], plugins: { css }, language: "css/css", extends: ["css/recommended"] },
-]);
+  // JS/TS
+  {
+    files: ['**/*.{js,ts}'],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tseslint,
+    },
+    rules: {
+      ...tseslint.configs.recommended.rules,
+    },
+  },
+
+  // Vue
+  {
+    files: ['**/*.vue'],
+    plugins: {
+      vue: pluginVue,
+    },
+    languageOptions: {
+      parser: 'vue-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        extraFileExtensions: ['.vue'],
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+    rules: {
+      ...pluginVue.configs['flat/essential'].rules,
+      'vue/multi-word-component-names': 'off',
+    },
+  },
+
+  // JSON
+  {
+    files: ['**/*.json'],
+    plugins: { json: jsonPlugin },
+    rules: {
+      ...jsonPlugin.configs.recommended.rules,
+    },
+  },
+
+  // Markdown
+  {
+    files: ['**/*.md'],
+    plugins: { markdown: markdownPlugin },
+    rules: {
+      ...markdownPlugin.configs.recommended.rules,
+    },
+  },
+
+  // CSS
+  {
+    files: ['**/*.css'],
+    plugins: { css: cssPlugin },
+    rules: {
+      ...cssPlugin.configs.recommended.rules,
+    },
+  },
+
+  // Prettier
+  {
+    files: ['**/*.{js,ts,vue}'],
+    plugins: { prettier },
+    rules: {
+      'prettier/prettier': 'error',
+    },
+  },
+
+  // ignore
+  {
+    ignores: [
+      '**/node_modules/**',
+      '**/.output/**',
+      '**/.nuxt/**',
+      '**/dist/**',
+      '**/*.json',
+      '**/*.css',
+      '**/package.json',
+      '**/package-lock.json',
+      '**/tsconfig.json',
+    ],
+  },
+])

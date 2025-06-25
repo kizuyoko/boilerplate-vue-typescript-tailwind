@@ -9,10 +9,10 @@ module.exports = {
       fontWeight: {
         semibold: 600,
         bold: 700,
-      }
+      },
     },
   },
-  darkMode: 'class', 
+  darkMode: 'class',
   content: [
     './app.vue',
     './components/**/*.{vue,js,ts}',
@@ -20,11 +20,10 @@ module.exports = {
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
-    './src/**/*.{vue,js,ts}' 
+    './src/**/*.{vue,js,ts}',
   ],
   theme: {
     extend: {},
   },
   plugins: [],
 }
-

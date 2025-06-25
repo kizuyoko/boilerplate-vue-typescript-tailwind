@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.validate": ["javascript", "typescript", "vue"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "vue.enableTakeOverMode": true
+}
