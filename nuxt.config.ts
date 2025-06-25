@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  srcDir: 'src',
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   app: {
