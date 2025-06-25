@@ -11,25 +11,30 @@ A minimal personal boilerplate to kickstart projects with **Nuxt 3**, **TypeScri
 
 ## Features
 
-Tailwind CSS ready
-TypeScript configured
-Vue 3 with <script setup> syntax
-File-based routing via Nuxt
-Simple reusable UI components (Button, Header, Footer)
-Clean layout with flex and container setup
+- Tailwind CSS ready
+- TypeScript configured
+- Vue 3 with <script setup> syntax
+- File-based routing via Nuxt
+- Simple reusable UI components (Button, Header, Footer)
+- Clean layout with flex and container setup
 
 ## Links
 
-Live Site: Netlify link [here](https://boilerplate-vue-typescript-tailwind.netlify.app/)
-GitHub Repository: GitHub link [here](https://github.com/kizuyoko/boilerplate-vue-typescript-tailwind)
+Live Site:
+
+- Netlify link [here](https://boilerplate-vue-typescript-tailwind.netlify.app/)
+- GitHub Repository: GitHub link [here](https://github.com/kizuyoko/boilerplate-vue-typescript-tailwind)
 
 ## Getting Started
 
+Install dependencies
+
 ```bash
-# Install dependencies
 npm install
+```
 
-# Start the development server
+Start the development server
+
+```bash
 npm run dev
-
 ```
